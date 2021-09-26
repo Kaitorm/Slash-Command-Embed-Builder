@@ -1,0 +1,14 @@
+{
+  "name": "embed-builder-slash-command",
+  "version": "1.0.0",
+  "description": "An easy Discord slash command embed builder made with Discord.js.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^13.1.0"
+  }
+}
