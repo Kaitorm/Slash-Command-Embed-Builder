@@ -12,3 +12,7 @@ A question or a suggestion? Tell us here » https://discord.gg/j5E42qVWHY !
 - Edit the token in the `config.js` file.
 - Launch the bot.
 - Magic.
+
+### Notes
+
+- The code includes a command handler, just take the command file if you already have it.
