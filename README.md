@@ -4,7 +4,7 @@ An easy Discord slash command embed builder made with Discord.js.
 
 Please let a ⭐ if you liked the project.
 
-A question or a suggestion? Tell us here » https://discord.gg/nCQDwTwak3 !
+A question or a suggestion? Tell us here » https://discord.gg/kaito-dev !
 
 ### Utilisation
 
