@@ -1,6 +1,6 @@
 class command {
     constructor() {
-        this.name = "test"
+        this.name = "embed"
         this.description = "Embed builder."
         this.options = [
             { type: 7, name: "channel", description: "The channel where the bot will send the embed.", required: false },
@@ -28,35 +28,26 @@ class command {
         const footer = interaction.options.getString("footer")
         const footerImage = interaction.options.getString("footer-image")
 
-        if(channel) {
-            if(channel.type != "GUILD_TEXT") return interaction.reply({ content: "The channel must be a text channel.", ephemeral: true })
-        }
+        if(channel && (channel.type !== "GUILD_TEXT")) return interaction.reply({ content: "The channel must be a text channel.", ephemeral: true })
 
         try {
+            const embeds = [{
+                title: title,
+                description: description ?? "** **",
+                image: { url: image },
+                color: color,
+                author: { name: author, url: url },
+                thumbnail: { url: thumbnail },
+                footer: { text: footer, iconURL: footerImage }
+            }]
             interaction.reply({ content: "Done!", ephemeral: true })
             if(channel) {
                 channel.send({
-                    embeds: [{
-                        title: title,
-                        description: description ?? "** **",
-                        image: { url: image },
-                        color: color,
-                        author: { name: author, url: url },
-                        thumbnail: { url: thumbnail },
-                        footer: { text: footer, iconURL: footerImage }
-                    }]
+                    embeds: embeds
                 })
             } else {
                 interaction.channel.send({
-                    embeds: [{
-                        title: title,
-                        description: description ?? "** **",
-                        image: { url: image },
-                        color: color,
-                        author: { name: author, url: url },
-                        thumbnail: { url: thumbnail },
-                        footer: { text: footer, iconURL: footerImage }
-                    }]
+                    embeds: embeds
                 })
             }
         } catch(e) {
